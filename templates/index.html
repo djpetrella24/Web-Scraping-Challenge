@@ -17,10 +17,17 @@
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Look at Mars!</a></p>
     </div>
 
-    <!-- Craigslist Listings -->
+    <!-- mars -->
     <div class="row" id="craiglist-listings">
       <div class="col-md-12">
-        <h4 class="heading">{{listings.title}} {{listings.paragraph}}</h4>
+        <h4 class="heading">{{listings.news_title}} {{listings.news_paragraph}}</h4>
+      </div>
+      <div class="col-md-12">
+        <table>{{listings.tables | safe}}</table>
+      </div>
+      <div class="col-md-12">
+        <img src = '{{listings.hemi_imgs.0.img_url}}' alt = '{{listings.hemi_imgs.0.title}}'>
+        <figcaption>{{listings.hemi_imgs.0.title}}</figcaption>
       </div>
     </div>
 
@@ -28,4 +35,3 @@
 </body>
 
 </html>
-
