@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Hot Finds</title>
+  <title>Web Scraping Challenge</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
@@ -17,21 +17,50 @@
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Look at Mars!</a></p>
     </div>
 
-    <!-- mars -->
-    <div class="row" id="craiglist-listings">
+    <!-- mars news -->
+    <div class="row">
       <div class="col-md-12">
         <h4 class="heading">{{listings.news_title}} {{listings.news_paragraph}}</h4>
       </div>
+
+      <!-- mars facts -->
       <div class="col-md-12">
         <table>{{listings.tables | safe}}</table>
       </div>
-      <div class="col-md-12">
-        <img src = '{{listings.hemi_imgs.0.img_url}}' alt = '{{listings.hemi_imgs.0.title}}'>
-        <figcaption>{{listings.hemi_imgs.0.title}}</figcaption>
+      <!-- mars featured image -->
+      <div class="container">
+        <div class='row'>
+          <img src='{{listings.featured_image}}' height='200' width='200' >
+          <figcaption>Featured Image</figcaption>
+        </div>
       </div>
-    </div>
+      <!-- mars hemispheres -->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <img src='{{listings.hemi_imgs.0.img_url}}' height='200' width='200' alt='{{listings.hemi_imgs.0.title}}'>
+            <figcaption>{{listings.hemi_imgs.0.title}}</figcaption>
+          </div>
+          <div class="col-md-6">
+            <img src='{{listings.hemi_imgs.1.img_url}}' height='200' width='200' alt='{{listings.hemi_imgs.0.title}}'>
+            <figcaption>{{listings.hemi_imgs.1.title}}</figcaption>
+          </div>
+          <div class='row'>
+            <div class="col-md-6">
+              <img src='{{listings.hemi_imgs.2.img_url}}' height='200' width='200' alt='{{listings.hemi_imgs.0.title}}'>
+              <figcaption>{{listings.hemi_imgs.2.title}}</figcaption>
+            </div>
+            <div class="col-md-6">
+              <img src='{{listings.hemi_imgs.3.img_url}}' height='200' width='200' alt='{{listings.hemi_imgs.0.title}}'>
+              <figcaption>{{listings.hemi_imgs.3.title}}</figcaption>
+            </div>
+          </div>
+        </div>
+      </div>
 
+    </div>
   </div>
+
 </body>
 
 </html>
